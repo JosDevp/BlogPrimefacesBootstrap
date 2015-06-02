@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>Blog JoseGuru</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./resources/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="./resources/css/blog.css" rel="stylesheet"/>
+
+   
+    </h:head>
+    <h:body>
+        <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Inicio</a>
+          <a class="blog-nav-item" href="#">Tutoriales</a>
+          <a class="blog-nav-item" href="#">Videotutoriales</a>
+          <a class="blog-nav-item" href="#">Frameworks</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">El blog de joseguru</h1>
+        <p class="lead blog-description">Sitio Oficial de joseguru</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+              <h:form id="frmcarosel1" enctype="multipart/form-data">
+                  
+            
+                  <p:accordionPanel value="#{post.allImage}" var="car" >
+                      <p:tab  title="#{car.titulo}" >
+            <h:panelGrid columns="1" cellpadding="5">
+                    <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Imagen" />
+                    </f:facet>
+                        <h:outputLink value="DisplayImage?id=#{car.id}" target="_blank" >
+                            <h:graphicImage value="DisplayImage?id=#{car.id}" width="80" height="80"></h:graphicImage>
+                    </h:outputLink>
+ 
+                </p:column>
+               
+                <h:outputText value="#{car.titulo}" style="text-align:center;font-family: cursive;font-size: medium"/>
+ 
+           
+                <blockquote> <h:outputText value="#{car.fecha}" style="font-family: cursive;font-size: small"  /></blockquote>
+                <p:separator/>
+           
+                <h:outputText value="#{car.descripcion1}" style="font-family: cursive;font-size: small" />
+                <p:commandButton value="Ver Mas" action="#{post.toProgramacion()}" />
+                
+                
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+                  <!--fin-->
+                  
+             </h:form>    
+                
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+           
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+           
+          </div><!-- /.blog-post -->
+ 
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+              <h:form id="frmlogin">
+                   <p:growl id="growl" showDetail="true" sticky="true" />  
+                  <h:panelGrid columns="1">
+                      <h:outputLabel value="Usuario:"/>
+                      <p:inputText value="#{usuarios.usuario}"/>
+                      <h:outputLabel value="Contraseña:"/>
+                      <p:password value="#{usuarios.contra}"/>
+                      <p:commandButton value="Inicio"  action="#{usuarios.acceso()}" update="growl"/>
+                      <p:commandLink value="Registrarse"/>
+                  </h:panelGrid>
+              </h:form>
+          </div>
+          <div class="sidebar-module">
+                 <h4>Archives</h4>
+                      
+              <h:form id="frmarbol">
+                  <ol class="list-unstyled">
+                      <li><p:link value="March 2014"/></li>
+                      <li><p:link value="February 2014"/></li>
+                      <li><p:link value="January 2014"/></li>
+                      <li><p:link value="December 2013"/></li>
+                      <li><p:link value="November 2013"/></li>
+                      <li><p:link value="October 2013"/></li>
+                      <li><p:link value="September 2013"/></li>
+                      <li><p:link value="August 2013"/></li>
+                      <li><p:link value="July 2013"/></li>
+                      <li><p:link value="June 2013"/></li>
+                      <li><p:link value="May 2013"/></li>
+                      <li><p:link value="April 2013"/></li>
+                      </ol>
+              </h:form>
+          
+            
+       
+           
+           
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog joseguru <a href="http://getbootstrap.com">gururcitos</a> by <a href="https://twitter.com/mdo">@jguru</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    </h:body>
+</html>
+
