@@ -22,7 +22,7 @@ import org.primefaces.model.UploadedFile;
 
 /**
  *
- * @author Syndein
+ * @author joseguru
  */
 @ManagedBean
 public class Post {
