@@ -14,7 +14,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Syndein
+ * @author joseguru
  */
 @ManagedBean
 public class Usuarios {
