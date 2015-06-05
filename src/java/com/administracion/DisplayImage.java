@@ -7,7 +7,7 @@ package com.administracion;
 
 /**
  *
- * @author Syndein
+ * @author joseguru
  */
 import com.conexion.Conexion;
 import java.sql.*;
