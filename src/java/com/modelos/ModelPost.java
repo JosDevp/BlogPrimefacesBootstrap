@@ -9,7 +9,7 @@ import java.sql.Blob;
 
 /**
  *
- * @author Syndein
+ * @author joseguru
  */
 public class ModelPost {
     private int id;
