@@ -9,13 +9,13 @@ import java.sql.Connection;
 
 /**
  *
- * @author Syndein
+ * @author joseguru
  */
 public class Conexion {
     public static Connection con_mysql;
         public static String host="localhost";
-        public static String user="root";
-        public static String pas="";
+        public static String user="tuusuario";
+        public static String pas="tupassword";
         public static String db="bdblog";
                 
 	public Connection conectar() throws Exception {
